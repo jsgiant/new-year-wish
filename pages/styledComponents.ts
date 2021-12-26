@@ -26,3 +26,18 @@ export const NameInput = styled.input`
   font-family: "Patua One";
   border: 1px solid white;
 `;
+
+export const ColorSelectorContainer = styled.div`
+  ${tw`flex mt-6`}
+`;
+
+export const ColorSelector = styled.form`
+  ${tw`rounded-lg`}
+`;
+
+export const Color = styled.input`
+  ${tw`cursor-pointer mr-2 py-2`};
+  background-color: ${(props) => props.color};
+  box-shadow: 0px 3px 10px ${(props) => props.color};
+  width: 35px;
+`;
