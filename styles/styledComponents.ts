@@ -2,7 +2,7 @@ import tw from "twin.macro";
 import styled from "styled-components";
 
 export const HomeWrapper = styled.main`
-	${tw`flex flex-col items-center justify-center h-screen max-h-screen overflow-hidden`};
+	${tw`flex flex-col items-center h-screen overflow-hidden`};
 	background-color: #111010;
 	font-family: "Roboto", sans-serif;
 `;
@@ -12,7 +12,7 @@ export const Heading = styled.h1`
 `;
 
 export const FieldsContainer = styled.div`
-	${tw`flex flex-col items-center justify-center h-full w-full`}
+	${tw`flex flex-col justify-self-center items-center justify-center h-full w-full`}
 `;
 
 export const CreateWishText = styled.h2`
@@ -77,4 +77,8 @@ export const CreateNewButton = styled(ShareButton)``;
 
 export const WishMessage = styled.p`
 	${tw`text-gray-200 text-center italic mt-4 mb-4 px-2`};
+`;
+
+export const WishContainer = styled.div`
+	${tw`flex flex-col justify-self-center items-center justify-center h-full w-full`}
 `;

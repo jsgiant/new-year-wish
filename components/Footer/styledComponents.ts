@@ -1,12 +1,8 @@
 import tw from "twin.macro";
 import styled from "styled-components";
 
-export const FooterWrapper = styled.div`
-	${tw`w-full relative`}
-`;
-
 export const FooterContainer = styled.footer`
-	${tw`flex flex-col lg:flex-row text-white font-semibold items-center justify-between bottom-0 fixed w-full bg-gray-800 p-4`};
+	${tw`flex flex-col lg:flex-row text-white font-semibold justify-self-end items-center justify-between w-full bg-gray-800 p-4 z-10`};
 `;
 
 export const FooterText = styled.p`

@@ -23,6 +23,7 @@ import {
 	ShareButton,
 	WishMessage,
 	WishText,
+	WishContainer,
 } from "../styles/styledComponents";
 
 const Wish = () => {
@@ -71,44 +72,46 @@ const Wish = () => {
 			</Head>
 			<HomeWrapper theme={currentColor}>
 				<ConfettiHolder id='confetti-holder'></ConfettiHolder>
-				<WishText>
-					Happy New Year <Name>{name}!</Name>
-				</WishText>
-				<WishMessage>{getGreetingMessage()} </WishMessage>
-				<ButtonsContainer>
-					{canShare ? (
-						<ShareButton onClick={shareWish}>
+				<WishContainer>
+					<WishText>
+						Happy New Year <Name>{name}!</Name>
+					</WishText>
+					<WishMessage>{getGreetingMessage()} </WishMessage>
+					<ButtonsContainer>
+						{canShare ? (
+							<ShareButton onClick={shareWish}>
+								<Icon>
+									<BsFillShareFill />
+								</Icon>
+								Share
+							</ShareButton>
+						) : (
+							<CopyLinkButton onClick={copyToClipboard}>
+								{!isCopied ? (
+									<>
+										<Icon>
+											<BiCopy />
+										</Icon>
+										Copy
+									</>
+								) : (
+									<>
+										<Icon>
+											<BsCheck />
+										</Icon>
+										Copied!
+									</>
+								)}
+							</CopyLinkButton>
+						)}
+						<CreateNewButton onClick={goToHomePage}>
 							<Icon>
-								<BsFillShareFill />
-							</Icon>
-							Share
-						</ShareButton>
-					) : (
-						<CopyLinkButton onClick={copyToClipboard}>
-							{!isCopied ? (
-								<>
-									<Icon>
-										<BiCopy />
-									</Icon>
-									Copy
-								</>
-							) : (
-								<>
-									<Icon>
-										<BsCheck />
-									</Icon>
-									Copied!
-								</>
-							)}
-						</CopyLinkButton>
-					)}
-					<CreateNewButton onClick={goToHomePage}>
-						<Icon>
-							<MdCreate />
-						</Icon>{" "}
-						Create New Wish
-					</CreateNewButton>
-				</ButtonsContainer>
+								<MdCreate />
+							</Icon>{" "}
+							Create New Wish
+						</CreateNewButton>
+					</ButtonsContainer>
+				</WishContainer>
 				<Footer />
 			</HomeWrapper>
 		</>
