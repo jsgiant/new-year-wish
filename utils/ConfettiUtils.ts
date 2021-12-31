@@ -1,6 +1,6 @@
 export const confettiConfig = {
 	target: "confetti-holder",
-	max: "250",
+	max: "300",
 	size: "1",
 	animate: true,
 	props: ["circle", "square", "triangle", "line"],
