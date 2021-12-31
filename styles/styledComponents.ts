@@ -2,17 +2,17 @@ import tw from "twin.macro";
 import styled from "styled-components";
 
 export const HomeWrapper = styled.main`
-	${tw`flex flex-col items-center justify-center min-h-screen px-2`};
-	background-color: ${({ theme }) => theme.color};
+	${tw`flex flex-col items-center h-screen overflow-hidden`};
+	background-color: #111010;
 	font-family: "Roboto", sans-serif;
 `;
 
 export const Heading = styled.h1`
-	${tw`text-white text-6xl font-bold mt-48 mb-4`};
+	${tw`text-white text-6xl font-bold mb-4`};
 `;
 
 export const FieldsContainer = styled.div`
-	${tw`flex flex-col items-center justify-center mt-16 mb-auto w-full`}
+	${tw`flex flex-col justify-self-center items-center justify-center h-full w-full`}
 `;
 
 export const CreateWishText = styled.h2`
@@ -31,12 +31,12 @@ export const NameInput = styled.input`
 `;
 
 export const CreateWishButton = styled.button`
-	${tw`rounded-lg px-6 py-2 text-white font-bold mt-8`};
+	${tw`rounded-lg px-6 py-2 text-white font-bold mt-6`};
 	background-color: #0070f3;
 `;
 
 export const WishText = styled.h1`
-	${tw`text-white lg:text-6xl font-bold text-3xl`};
+	${tw`text-white lg:text-6xl text-center mx-auto font-bold text-3xl whitespace-normal`};
 	animation: zoom 2s ease-in-out infinite;
 	@keyframes zoom {
 		0% {
@@ -49,18 +49,19 @@ export const WishText = styled.h1`
 			transform: scale(1, 1);
 		}
 	}
+	width: 90%;
 `;
 
 export const ConfettiHolder = styled.canvas`
-	${tw`absolute top-0 left-0 `};
+	${tw`absolute top-0 left-0 h-full w-full`};
 `;
 
 export const Name = styled.span`
-	${tw`text-blue-600 lg:text-6xl font-bold text-3xl`};
+	${tw`text-blue-600 lg:text-6xl font-bold text-3xl whitespace-normal`};
 `;
 
 export const ButtonsContainer = styled.div`
-	${tw`flex mt-12 items-center`};
+	${tw`flex items-center`};
 `;
 
 export const ShareButton = styled(CreateWishButton)`
@@ -76,5 +77,9 @@ export const Icon = styled.span`
 export const CreateNewButton = styled(ShareButton)``;
 
 export const WishMessage = styled.p`
-	${tw`text-gray-200 text-center italic mt-4 mb-4`};
+	${tw`text-gray-200 text-center italic mt-4 mb-4 px-2`};
+`;
+
+export const WishContainer = styled.div`
+	${tw`flex flex-col justify-self-center items-center justify-center h-full w-full`}
 `;

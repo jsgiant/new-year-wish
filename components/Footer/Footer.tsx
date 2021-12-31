@@ -23,7 +23,7 @@ export const Footer = () => {
 				</Hyperlink>
 			</FooterText>
 			<SocialMediaHanldesWrapper>
-				Let's connect on
+				Let`s connect on
 				<SocialMediaHandlesContainer>
 					<SocialMedialHandle target='_blank' href={github}>
 						<BsGithub />
