@@ -10,7 +10,6 @@ import useColor from "../hooks/useColor";
 import { confettiConfig } from "../utils/ConfettiUtils";
 import Footer from "../components/Footer";
 import { getGreetingMessage } from "../utils/WishUtils";
-
 import {
 	ButtonsContainer,
 	ConfettiHolder,
@@ -21,7 +20,7 @@ import {
 	ShareButton,
 	WishMessage,
 	WishText,
-} from "./styledComponents";
+} from "../styles/styledComponents";
 
 const Wish = () => {
 	const router = useRouter();

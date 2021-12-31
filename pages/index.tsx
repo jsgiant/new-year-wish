@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 import useColor from "../hooks/useColor";
 import { variants } from "../utils/MotionUtils";
 import Footer from "../components/Footer";
-
 import {
 	CreateWishText,
 	FieldsContainer,
@@ -15,7 +14,7 @@ import {
 	HomeWrapper,
 	NameInput,
 	CreateWishButton,
-} from "./styledComponents";
+} from "../styles/styledComponents";
 
 const Home: NextPage = () => {
 	const { currentColor, setColor } = useColor();

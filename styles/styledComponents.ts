@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const HomeWrapper = styled.main`
 	${tw`flex flex-col items-center justify-center min-h-screen px-2`};
-	background-color: ${({ theme }) => theme.color};
+	background-color: #111010;
 	font-family: "Roboto", sans-serif;
 `;
 
