@@ -3,6 +3,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import ConfettiGenerator from "confetti-js";
 import { MdCreate } from "react-icons/md";
+import { BiShareAlt } from "react-icons/bi";
 
 import useColor from "../hooks/useColor";
 import { confettiConfig } from "../utils/ConfettiUtils";
@@ -10,11 +11,13 @@ import Footer from "../components/Footer";
 import { getGreetingMessage } from "../utils/WishUtils";
 
 import {
+	ButtonsContainer,
 	ConfettiHolder,
 	CreateNewButton,
 	HomeWrapper,
 	Icon,
 	Name,
+	ShareButton,
 	WishMessage,
 	WishText,
 } from "./styledComponents";
@@ -24,12 +27,25 @@ const Wish = () => {
 	const { slug } = router.query;
 	const { currentColor } = useColor();
 	const name = slug ? slug[0]?.toString() : "";
+	const shouldNavigate = typeof navigator.share === "function";
 
 	useEffect(() => {
 		const confetti = new ConfettiGenerator(confettiConfig);
 		confetti.render();
 		return () => confetti.clear();
 	}, []);
+
+	const shareWish = async () => {
+		try {
+			await navigator.share({
+				title: document.title,
+				text: "Happy New Year Wishes here!",
+				url: window.location.href,
+			});
+		} catch (e) {
+			console.error(e);
+		}
+	};
 
 	const goToHomePage = () => router.push("/");
 
@@ -43,15 +59,25 @@ const Wish = () => {
 			<HomeWrapper theme={currentColor}>
 				<ConfettiHolder id='confetti-holder'></ConfettiHolder>
 				<WishText>
-					Happy New Year <Name>{name}!!</Name>
+					Happy New Year <Name>{name}!</Name>
 				</WishText>
 				<WishMessage>{getGreetingMessage()} </WishMessage>
-				<CreateNewButton onClick={goToHomePage}>
-					<Icon>
-						<MdCreate />
-					</Icon>{" "}
-					Create New Wish
-				</CreateNewButton>
+				<ButtonsContainer>
+					{shouldNavigate && (
+						<ShareButton onClick={shareWish}>
+							<Icon>
+								<BiShareAlt />
+							</Icon>{" "}
+							Share
+						</ShareButton>
+					)}
+					<CreateNewButton onClick={goToHomePage}>
+						<Icon>
+							<MdCreate />
+						</Icon>{" "}
+						Create New Wish
+					</CreateNewButton>
+				</ButtonsContainer>
 				<Footer />
 			</HomeWrapper>
 		</>

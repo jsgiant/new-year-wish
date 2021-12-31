@@ -64,7 +64,7 @@ export const ButtonsContainer = styled.div`
 `;
 
 export const ShareButton = styled(CreateWishButton)`
-	${tw`mr-4 z-10 flex items-center`}
+	${tw`mr-4 z-10 flex items-center px-4`}
 `;
 
 export const CopyLinkButton = styled(ShareButton)``;
@@ -73,9 +73,7 @@ export const Icon = styled.span`
 	${tw`px-2 text-lg`}
 `;
 
-export const CreateNewButton = styled(ShareButton)`
-	${tw`mr-0 mt-12`}
-`;
+export const CreateNewButton = styled(ShareButton)``;
 
 export const WishMessage = styled.p`
 	${tw`text-gray-200 text-center italic mt-4 mb-4`};
