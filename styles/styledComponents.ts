@@ -8,7 +8,7 @@ export const HomeWrapper = styled.main`
 `;
 
 export const Heading = styled.h1`
-	${tw`text-white text-6xl font-bold mt-48 mb-4`};
+	${tw`text-white text-6xl font-bold mb-4`};
 `;
 
 export const FieldsContainer = styled.div`
