@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
+//@ts-ignore
 import ConfettiGenerator from "confetti-js";
 import { MdCreate } from "react-icons/md";
 import { BiShareAlt } from "react-icons/bi";
