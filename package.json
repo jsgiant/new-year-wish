@@ -8,20 +8,69 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/css": "^11.7.1",
+    "@emotion/react": "^11.7.1",
+    "@emotion/server": "^11.4.0",
+    "@emotion/styled": "^11.6.0",
+    "confetti-js": "0.0.18",
+    "framer-motion": "5.5.5",
     "next": "12.0.7",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-icons": "4.3.1",
     "styled-components": "^5.3.3",
-    "twin.macro": "^2.8.2"
+    "twin.macro": "^2.8.2",
+    "webpack": "^5.65.0"
   },
   "devDependencies": {
+    "@emotion/babel-plugin": "^11.7.2",
     "@types/node": "17.0.2",
     "@types/react": "17.0.37",
+    "@types/styled-components": "^5.1.18",
     "autoprefixer": "^10.4.0",
+    "babel-plugin-macros": "^3.1.0",
+    "babel-plugin-styled-components": "^2.0.2",
     "eslint": "8.5.0",
     "eslint-config-next": "12.0.7",
     "postcss": "^8.4.5",
     "tailwindcss": "^3.0.7",
     "typescript": "4.5.4"
+  },
+  "babelMacros": {
+    "twin": {
+      "preset": "emotion"
+    }
+  },
+  "babel": {
+    "env": {
+      "development": {
+        "presets": [
+          "next/babel"
+        ],
+        "plugins": [
+          [
+            "styled-components",
+            {
+              "ssr": true,
+              "displayName": true
+            }
+          ]
+        ]
+      },
+      "production": {
+        "presets": [
+          "next/babel"
+        ],
+        "plugins": [
+          [
+            "styled-components",
+            {
+              "ssr": true,
+              "displayName": false
+            }
+          ]
+        ]
+      }
+    }
   }
 }
