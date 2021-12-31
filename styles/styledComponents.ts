@@ -36,7 +36,7 @@ export const CreateWishButton = styled.button`
 `;
 
 export const WishText = styled.h1`
-	${tw`text-white lg:text-6xl font-bold text-3xl`};
+	${tw`text-white lg:text-6xl text-center mx-auto font-bold text-3xl whitespace-normal`};
 	animation: zoom 2s ease-in-out infinite;
 	@keyframes zoom {
 		0% {
@@ -49,6 +49,7 @@ export const WishText = styled.h1`
 			transform: scale(1, 1);
 		}
 	}
+	width: 90%;
 `;
 
 export const ConfettiHolder = styled.canvas`
@@ -56,7 +57,7 @@ export const ConfettiHolder = styled.canvas`
 `;
 
 export const Name = styled.span`
-	${tw`text-blue-600 lg:text-6xl font-bold text-3xl`};
+	${tw`text-blue-600 lg:text-6xl font-bold text-3xl whitespace-normal`};
 `;
 
 export const ButtonsContainer = styled.div`
