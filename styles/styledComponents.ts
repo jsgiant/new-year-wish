@@ -2,7 +2,7 @@ import tw from "twin.macro";
 import styled from "styled-components";
 
 export const HomeWrapper = styled.main`
-	${tw`flex flex-col items-center justify-center min-h-screen`};
+	${tw`flex flex-col items-center justify-center h-screen`};
 	background-color: #111010;
 	font-family: "Roboto", sans-serif;
 `;
@@ -31,7 +31,7 @@ export const NameInput = styled.input`
 `;
 
 export const CreateWishButton = styled.button`
-	${tw`rounded-lg px-6 py-2 text-white font-bold mt-8`};
+	${tw`rounded-lg px-6 py-2 text-white font-bold mt-6`};
 	background-color: #0070f3;
 `;
 
@@ -60,7 +60,7 @@ export const Name = styled.span`
 `;
 
 export const ButtonsContainer = styled.div`
-	${tw`flex mt-12 items-center`};
+	${tw`flex items-center`};
 `;
 
 export const ShareButton = styled(CreateWishButton)`

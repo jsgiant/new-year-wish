@@ -3,9 +3,10 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 //@ts-ignore
 import ConfettiGenerator from "confetti-js";
-import { MdCreate } from "react-icons/md";
-import { BiShareAlt, BiCopy } from "react-icons/bi";
 import copy from "copy-to-clipboard";
+import { BsFillShareFill, BsCheck } from "react-icons/bs";
+import { MdCreate } from "react-icons/md";
+import { BiCopy } from "react-icons/bi";
 
 import useColor from "../hooks/useColor";
 import { confettiConfig } from "../utils/ConfettiUtils";
@@ -29,6 +30,7 @@ const Wish = () => {
 	const { slug } = router.query;
 	const { currentColor } = useColor();
 	const name = slug ? slug[0]?.toString() : "";
+	const [isCopied, setIsCopied] = React.useState(false);
 	const canShare =
 		typeof window !== "undefined" &&
 		typeof window.navigator.share === "function";
@@ -55,6 +57,7 @@ const Wish = () => {
 
 	const copyToClipboard = () => {
 		copy(window.location.href);
+		setIsCopied(true);
 	};
 
 	const goToHomePage = () => router.push("/");
@@ -76,16 +79,27 @@ const Wish = () => {
 					{canShare ? (
 						<ShareButton onClick={shareWish}>
 							<Icon>
-								<BiShareAlt />
+								<BsFillShareFill />
 							</Icon>
 							Share
 						</ShareButton>
 					) : (
 						<CopyLinkButton onClick={copyToClipboard}>
-							<Icon>
-								<BiCopy />
-							</Icon>
-							Copy
+							{!isCopied ? (
+								<>
+									<Icon>
+										<BiCopy />
+									</Icon>
+									Copy
+								</>
+							) : (
+								<>
+									<Icon>
+										<BsCheck />
+									</Icon>
+									Copied!
+								</>
+							)}
 						</CopyLinkButton>
 					)}
 					<CreateNewButton onClick={goToHomePage}>
