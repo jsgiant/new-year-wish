@@ -2,7 +2,7 @@ import tw from "twin.macro";
 import styled from "styled-components";
 
 export const HomeWrapper = styled.main`
-	${tw`flex flex-col items-center justify-center h-screen`};
+	${tw`flex flex-col items-center justify-center h-screen max-h-screen overflow-hidden`};
 	background-color: #111010;
 	font-family: "Roboto", sans-serif;
 `;
@@ -12,7 +12,7 @@ export const Heading = styled.h1`
 `;
 
 export const FieldsContainer = styled.div`
-	${tw`flex flex-col items-center justify-center mt-16 mb-auto w-full`}
+	${tw`flex flex-col items-center justify-center h-full w-full`}
 `;
 
 export const CreateWishText = styled.h2`
