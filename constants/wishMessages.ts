@@ -1,0 +1,15 @@
+export const greetingMessages = [
+	"Warmest thoughts and best wishes for a Happy New Year. May peace, love, and prosperity follow you always.",
+	"Although we may have our ups and downs, I know we will always support each other. Here’s to another year and our wonderful family!",
+	"Wishing you a year full of blessing and filled with a new adventure. Happy new year 2022!",
+	"I hope this year turns out to be the best year of your life and your family too. Happy new year!",
+	"May this new year bring you much joy and fun. May you find peace, love, and success. Sending my heartiest new year wish for you!",
+	"May the New Year bring you happiness, peace, and prosperity. Wishing you a joyous 2022!",
+	"Remember all the good memories you have made and know that your life will be so full of wonders in the coming year. Happy New Year 2022!",
+	"It’s tough to put it in words how much you mean to me. I will choose you again and again because I am truly, madly and deeply in love with you. Happy New Year 2022.",
+	"Happy new year to the sweetest person alive. Thanks for being in my life.",
+	"May the New Year 2022 bring you more love, happiness, and blessings!",
+	"This new year's greeting is sent with love in hopes that God blesses you from above.",
+	"Be at war with your vices, at peace with your neighbors, and let every new year find you a better man.",
+	"New Year's Day is every man's birthday.",
+];
