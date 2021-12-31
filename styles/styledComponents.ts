@@ -52,7 +52,7 @@ export const WishText = styled.h1`
 `;
 
 export const ConfettiHolder = styled.canvas`
-	${tw`absolute top-0 left-0 `};
+	${tw`absolute top-0 left-0 h-full`};
 `;
 
 export const Name = styled.span`
