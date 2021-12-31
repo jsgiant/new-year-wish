@@ -4,7 +4,8 @@ import { useRouter } from "next/router";
 //@ts-ignore
 import ConfettiGenerator from "confetti-js";
 import { MdCreate } from "react-icons/md";
-import { BiShareAlt } from "react-icons/bi";
+import { BiShareAlt, BiCopy } from "react-icons/bi";
+import copy from "copy-to-clipboard";
 
 import useColor from "../hooks/useColor";
 import { confettiConfig } from "../utils/ConfettiUtils";
@@ -13,6 +14,7 @@ import { getGreetingMessage } from "../utils/WishUtils";
 import {
 	ButtonsContainer,
 	ConfettiHolder,
+	CopyLinkButton,
 	CreateNewButton,
 	HomeWrapper,
 	Icon,
@@ -27,7 +29,7 @@ const Wish = () => {
 	const { slug } = router.query;
 	const { currentColor } = useColor();
 	const name = slug ? slug[0]?.toString() : "";
-	const shouldNavigate =
+	const canShare =
 		typeof window !== "undefined" &&
 		typeof window.navigator.share === "function";
 
@@ -51,6 +53,10 @@ const Wish = () => {
 		}
 	};
 
+	const copyToClipboard = () => {
+		copy(window.location.href);
+	};
+
 	const goToHomePage = () => router.push("/");
 
 	return (
@@ -67,13 +73,20 @@ const Wish = () => {
 				</WishText>
 				<WishMessage>{getGreetingMessage()} </WishMessage>
 				<ButtonsContainer>
-					{shouldNavigate && (
+					{canShare ? (
 						<ShareButton onClick={shareWish}>
 							<Icon>
 								<BiShareAlt />
-							</Icon>{" "}
+							</Icon>
 							Share
 						</ShareButton>
+					) : (
+						<CopyLinkButton onClick={copyToClipboard}>
+							<Icon>
+								<BiCopy />
+							</Icon>
+							Copy
+						</CopyLinkButton>
 					)}
 					<CreateNewButton onClick={goToHomePage}>
 						<Icon>

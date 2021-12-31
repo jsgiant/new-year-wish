@@ -2,7 +2,7 @@ import tw from "twin.macro";
 import styled from "styled-components";
 
 export const HomeWrapper = styled.main`
-	${tw`flex flex-col items-center justify-center min-h-screen px-2`};
+	${tw`flex flex-col items-center justify-center min-h-screen`};
 	background-color: #111010;
 	font-family: "Roboto", sans-serif;
 `;
@@ -76,5 +76,5 @@ export const Icon = styled.span`
 export const CreateNewButton = styled(ShareButton)``;
 
 export const WishMessage = styled.p`
-	${tw`text-gray-200 text-center italic mt-4 mb-4`};
+	${tw`text-gray-200 text-center italic mt-4 mb-4 px-2`};
 `;

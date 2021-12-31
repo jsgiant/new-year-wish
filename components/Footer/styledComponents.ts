@@ -2,7 +2,7 @@ import tw from "twin.macro";
 import styled from "styled-components";
 
 export const FooterContainer = styled.footer`
-	${tw`flex flex-col lg:flex-row text-white font-semibold items-center justify-between mt-auto fixed bottom-0 left-0 w-full bg-gray-800 p-4`};
+	${tw`flex flex-col lg:flex-row text-white font-semibold items-center justify-between  bottom-0 absolute  w-full bg-gray-800 p-4`};
 `;
 
 export const FooterText = styled.p`
