@@ -27,7 +27,9 @@ const Wish = () => {
 	const { slug } = router.query;
 	const { currentColor } = useColor();
 	const name = slug ? slug[0]?.toString() : "";
-	const shouldNavigate = typeof navigator.share === "function";
+	const shouldNavigate =
+		typeof window !== "undefined" &&
+		typeof window.navigator.share === "function";
 
 	useEffect(() => {
 		const confetti = new ConfettiGenerator(confettiConfig);
@@ -36,14 +38,16 @@ const Wish = () => {
 	}, []);
 
 	const shareWish = async () => {
-		try {
-			await navigator.share({
-				title: document.title,
-				text: "Happy New Year Wishes here!",
-				url: window.location.href,
-			});
-		} catch (e) {
-			console.error(e);
+		if (typeof window !== "undefined") {
+			try {
+				await window.navigator.share({
+					title: document.title,
+					text: "Happy New Year Wishes here!",
+					url: window.location.href,
+				});
+			} catch (e) {
+				console.error(e);
+			}
 		}
 	};
 
