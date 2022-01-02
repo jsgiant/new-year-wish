@@ -10,9 +10,13 @@ Don't forget to ⭐️ this repository!
 
 ## Images
 
-![Home Page]('https://raw.githubusercontent.com/jsgiant/Assets/master/home.png')
+### Home
 
-![Wish Page]('https://raw.githubusercontent.com/jsgiant/Assets/master/wish.png')
+![Home Page](https://raw.githubusercontent.com/jsgiant/Assets/master/home.png)
+
+### Wish
+
+![Wish Page](https://raw.githubusercontent.com/jsgiant/Assets/master/wish.png)
 
 ## Local Setup
 
